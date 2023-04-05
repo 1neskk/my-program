@@ -331,8 +331,8 @@ public:
     friend std::ostream& operator << (std::ostream &s, const Matrix44 &m)
     {
         std::ios_base::fmtflags oldFlags = s.flags();
-        int width = 12; // total with of the displayed number
-        s.precision(5); // control the number of displayed decimals
+        int width = 12; 
+        s.precision(5);
         s.setf (std::ios_base::fixed);
         
         s << "(" << std::setw (width) << m[0][0] <<
@@ -365,14 +365,14 @@ typedef Matrix44<float> Matrix44f;
 int main(int argc, char **argv)
 {
     Vec3f v(0, 1, 2);
-    std::cerr << v << std::endl;
+    std::cout << v << std::endl;
     Matrix44f a, b, c;
     c = a * b;
 
     Matrix44f d(0.707107, 0, -0.707107, 0, -0.331295, 0.883452, -0.331295, 0, 0.624695, 0.468521, 0.624695, 0, 4.000574, 3.00043, 4.000574, 1);
-    std::cerr << d << std::endl;
+    std::cout << d << std::endl;
     d.invert();
-    std::cerr << d << std::endl;
+    std::cout << d << std::endl;
 
     return 0;
 }
